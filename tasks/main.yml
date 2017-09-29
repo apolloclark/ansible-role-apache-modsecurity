@@ -1,0 +1,31 @@
+---
+
+# http://docs.ansible.com/ansible/latest/apt_module.html
+- name: Install the Apache mod_security2 module
+  apt:
+    name: libapache2-mod-security2
+    update_cache: yes
+    state: latest
+  
+# http://docs.ansible.com/ansible/latest/apache2_module_module.html
+- name: enable mod_security2
+  apache2_module:
+    name: security2
+    state: present
+  notify:
+   - restart apache2
+
+# http://docs.ansible.com/ansible/latest/template_module.html
+- name: Deploy modsecurity.conf file
+  template:
+    src: "modsecurity.conf.j2"
+    dest: "{{ apache_conf_dir }}/modsecurity.conf"
+    owner: root
+    group: root
+    mode: 0644
+    
+# a2enconf modsecurity.conf
+- name: enable mod_securit2 config file
+  command: "a2enconf modsecurity.conf"
+  notify:
+  - restart apache2
