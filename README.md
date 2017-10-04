@@ -1,4 +1,4 @@
-# apache-modsecurity
+# Ansible Role: apache-modsecurity
 
 Ansible Role to install and configure Apache mod_security2 for Ubuntu.
 
