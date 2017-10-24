@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: apolloclark
-  description: Install and configure the Apache mod_security2 module
+  description: Install and configure Apache mod_security2 module
   company: "Apollo Clark"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.2
