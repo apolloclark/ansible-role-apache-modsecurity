@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: apache-modsecurity
+  role_name: apache_modsecurity
   author: apolloclark
   description: Install and configure Apache mod_security2 module
   company: "Apollo Clark"
