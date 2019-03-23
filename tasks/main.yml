@@ -5,8 +5,8 @@
   apt:
     name: libapache2-mod-security2
     update_cache: yes
-    state: latest
-  
+    state: present
+
 # http://docs.ansible.com/ansible/latest/apache2_module_module.html
 - name: enable mod_security2
   apache2_module:
@@ -23,7 +23,7 @@
     owner: root
     group: root
     mode: 0644
-    
+
 # a2enconf modsecurity.conf
 - name: enable mod_securit2 config file
   command: "a2enconf modsecurity.conf"
